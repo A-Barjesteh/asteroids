@@ -29,7 +29,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        screen.fill((0,0,0))
+        screen.fill(BLACK)
         #update all in updateable group
         updatable.update(dt)
         #draw all sprites
