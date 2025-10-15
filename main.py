@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import *
 from player import *
 from asteroid import *
@@ -43,6 +44,10 @@ def main():
         screen.fill(BLACK)
         #update all in updateable group
         updatable.update(dt)
+        for asteroid in asteroids:
+            if asteroid.check_collision(players):
+                print("Game Over")
+                sys.exit()
         #draw all sprites
         for sprite in drawable:
             sprite.draw(screen)
